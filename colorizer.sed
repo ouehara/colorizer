@@ -1,4 +1,4 @@
-#!/bin/sed -f
+#!/usr/local/opt/gnu-sed/libexec/gnubin/sed -f
 
 # http status code
 s/\(HTTP\/1..\"\) \(2[0-9][0-9]\) /\1 {{blue}}\2{{reset}} /
@@ -33,6 +33,8 @@ s@ \(no\|in\) @ {{magenta}}\1{{reset}} @g
 
 # sql
 s/\(BEGIN\|SELECT\|FROM\|WHERE\|LIMIT\|AS\|CREATE\) /{{magenta}}\1{{reset}} /ig
+s/\(INSERT\) /{{yellow}}\1{{reset}} /ig
+s/\(UPDATE\) /{{yellow}}\1{{reset}} /ig
 s/\(DELETE\) /{{red}}\1{{reset}} /ig
 
 # command args
